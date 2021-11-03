@@ -22,6 +22,7 @@ class SDK {
      * Constructor
      */
     constructor(args) {
+        // Properties
         this.baseUrl = '';
         this.authToken = '';
         this.authTokenIsBearer = true;

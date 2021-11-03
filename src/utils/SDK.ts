@@ -7,6 +7,8 @@ import { defaultArgs } from './values'
  */
 
 export default class SDK {
+	// Properties
+
 	baseUrl = ''
 	authToken = ''
 	authTokenIsBearer = true
