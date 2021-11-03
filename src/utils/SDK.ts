@@ -166,7 +166,7 @@ export default class SDK {
 
 	private formatQueryParams(args?: any) {
 		let queryStr = ''
-		if (Object.keys(args).length)
+		if (args && Object.keys(args).length)
 			queryStr = new URLSearchParams(args).toString()
 		if (queryStr) queryStr = `?${queryStr}`
 		return queryStr

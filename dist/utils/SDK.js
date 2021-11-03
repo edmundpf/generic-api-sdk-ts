@@ -32,7 +32,7 @@ class SDK {
      * Init
      */
     init(args) {
-        const { baseUrl, authToken, authTokenIsBearer, defaultHeaders, } = Object.assign(Object.assign({}, values_1.defaultArgs), args);
+        const { baseUrl, authToken, authTokenIsBearer, defaultHeaders } = Object.assign(Object.assign({}, values_1.defaultArgs), args);
         const instance = axios_1.default.create({
             baseURL: baseUrl,
             headers: defaultHeaders,
@@ -107,7 +107,7 @@ class SDK {
         return __awaiter(this, void 0, void 0, function* () {
             const methods = {
                 get: (_a = this.instance) === null || _a === void 0 ? void 0 : _a.get,
-                delete: (_b = this.instance) === null || _b === void 0 ? void 0 : _b.delete
+                delete: (_b = this.instance) === null || _b === void 0 ? void 0 : _b.delete,
             };
             const method = methods[reqType].bind(this.instance);
             const reqUrl = this.formatUrl(url, replaceArgs, queryArgs);
@@ -145,7 +145,7 @@ class SDK {
      */
     formatQueryParams(args) {
         let queryStr = '';
-        if (Object.keys(args).length)
+        if (args && Object.keys(args).length)
             queryStr = new URLSearchParams(args).toString();
         if (queryStr)
             queryStr = `?${queryStr}`;
