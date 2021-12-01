@@ -157,7 +157,7 @@ export default class SDK {
 	private formatReplaceArgs(url: string, args?: any) {
 		let urlWithParams = url
 		for (const key in args) {
-			urlWithParams = urlWithParams.replace(`/${key}`, String(args[key]))
+			urlWithParams = urlWithParams.replace(key, String(args[key]))
 		}
 		return urlWithParams
 	}
